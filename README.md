@@ -1,3 +1,0 @@
-# LOT SIZE CALCULATOR
-
-
