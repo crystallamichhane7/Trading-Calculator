@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>LOT SIZE CALCULATOR</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Smart Lot Size Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+
+<body>
+<div class="app" id="app">
+
+  <h1>📊 Smart Trader Tool</h1>
+
+  <!-- INPUTS -->
+  <div class="card">
+    <h3>Trade Setup</h3>
+
+    <input type="number" id="account" placeholder="Account Size ($)">
+    <input type="number" id="risk" placeholder="Risk (%)">
+
+    <select id="mode" onchange="toggleMode()">
+      <option value="manual">Manual SL</option>
+      <option value="price">Entry + SL Price</option>
+    </select>
+
+    <div id="manualSL">
+      <input type="number" id="sl" placeholder="Stop Loss">
+    </div>
+
+    <div id="priceSL" style="display:none;">
+      <input type="number" id="entry" placeholder="Entry Price">
+      <input type="number" id="slprice" placeholder="Stop Loss Price">
+    </div>
+
+    <input type="number" id="tp" placeholder="Take Profit">
+
+    <select id="pair">
+      <option value="1">NAS100</option>
+      <option value="1">US30</option>
+      <option value="10">XAUUSD</option>
+      <option value="10">EURUSD</option>
+      <option value="9">USDJPY</option>
+      <option value="1">BTCUSD</option>
+    </select>
+
+    <button onclick="calculate()">Calculate</button>
+  </div>
+
+  <!-- OUTPUT -->
+  <div class="card" id="summaryBox"></div>
+
+  <!-- FUNDED -->
+  <div class="card">
+    <h3>Funded Account Check</h3>
+    <input type="number" id="dailyLoss" placeholder="Daily Loss Limit">
+    <input type="number" id="maxDD" placeholder="Max Drawdown">
+    <p id="fundedWarning"></p>
+  </div>
+
+  <!-- SIMULATOR -->
+  <div class="card">
+    <h3>Win Rate Simulator</h3>
+    <input type="number" id="winrate" placeholder="Win Rate %">
+    <input type="number" id="trades" placeholder="Number of Trades">
+    <button onclick="simulate()">Simulate</button>
+    <p id="simulationResult"></p>
+  </div>
+
+  <!-- ACTIONS -->
+  <div class="card">
+    <button onclick="saveTrade()">💾 Save Trade</button>
+    <button onclick="downloadImage()">📸 Export Screenshot</button>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="card">
+    <h3>📜 Trade History</h3>
+    <div id="history"></div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
